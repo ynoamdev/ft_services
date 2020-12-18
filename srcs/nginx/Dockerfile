@@ -1,6 +1,5 @@
 FROM		alpine
 RUN         apk upgrade
-COPY        nginx.sh /
-RUN         sh nginx.sh
-CMD			sh $(service nginx start)
-CMD			top
+COPY        srcs/*  /
+RUN         sh /nginx.sh
+CMD			sh /when-runing.sh
