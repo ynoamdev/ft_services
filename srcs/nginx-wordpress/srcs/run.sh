@@ -1,2 +1,2 @@
 #!/bin/bash
-service nginx restart
+# service nginx restart
