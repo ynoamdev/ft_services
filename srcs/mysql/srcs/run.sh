@@ -1,2 +1,3 @@
 #!/bin/bash
- service mysql start
+/etc/init.d/mariadb setup
+ service mariadb start

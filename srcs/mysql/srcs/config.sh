@@ -2,6 +2,6 @@
 apk add vim 
 apk add openrc
 apk add tmux
-apk add mysql mysql-client php-mysql php-mysqli
+sh download-mysql.sh
 rc-status
 touch /run/openrc/softlevel
