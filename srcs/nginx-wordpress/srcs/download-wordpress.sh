@@ -1,11 +1,4 @@
 #!/bin/bash
- apk add php7-fpm
- apk add php7 php7-fpm php7-opcache
-# rc-update add php-fpm7 default
- apk add php7-gd php7-mysqli php7-zlib php7-curl
+apk add php-mbstring php-session php7-common php7-iconv php7-json php7-gd php7-curl php7-xml php7-mysqli php7-imap php7-cgi fcgi php7-pdo php7-pdo_mysql php7-soap php7-xmlrpc php7-posix php7-mcrypt php7-gettext php7-ldap php7-ctype php7-dom php7-fpm
  wget http://wordpress.org/latest.tar.gz
  tar -xvf latest.tar.gz
- mv wordpress /var/www/localhost/htdocs/
- mv /var/www/localhost/htdocs/wordpress/wp-config-sample.php /var/www/localhost/htdocs/wordpress/wp-config.php
-# chown -R www-data:www-data /var/www/html/wordpress
-# chmod 755 -R /var/www/html/wordpress

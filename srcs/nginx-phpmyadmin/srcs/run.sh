@@ -1,2 +1,3 @@
 #!/bin/bash
-service nginx restart
+ service php-fpm7 start
+ service nginx start
