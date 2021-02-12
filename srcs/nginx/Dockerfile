@@ -7,4 +7,4 @@ RUN touch /run/openrc/softlevel
 RUN mkdir /run/nginx
 RUN echo 154 >  /run/nginx/nginx.pid
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"] 

@@ -1,5 +1,8 @@
-FROM		alpine
-RUN         apk upgrade
-COPY        srcs/*  /
-RUN         sh /config.sh
-# CMD			sh /run.sh
+FROM alpine
+RUN apk update\
+    && apk add openrc\
+    && apk add mysql mysql-client\
+    && rc-status\
+    && touch /run/openrc/softlevel\
+    && /etc/init.d/mariadb setup
+CMD mysqld_safe
