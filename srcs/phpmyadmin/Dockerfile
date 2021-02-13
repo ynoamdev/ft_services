@@ -1,6 +1,7 @@
 FROM		alpine
+EXPOSE      5000
 RUN         apk upgrade
-COPY        srcs/*  /
+COPY        default.conf /
 RUN         apk add nginx
 RUN         apk add openrc
 RUN         rc-status
