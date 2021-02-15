@@ -29,7 +29,7 @@ define( 'DB_USER', 'ynoam' );
 define( 'DB_PASSWORD', 'ynoam' );
 
 /** MySQL hostname */
-define( 'DB_HOST', '172.17.0.2' );
+define( 'DB_HOST', '172.17.0.3' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
