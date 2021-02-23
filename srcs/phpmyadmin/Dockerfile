@@ -1,4 +1,4 @@
-FROM		alpine
+FROM		alpine:3.12.1
 EXPOSE      5000
 RUN         apk upgrade
 COPY        default.conf /

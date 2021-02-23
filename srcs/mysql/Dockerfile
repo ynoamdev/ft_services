@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.12.1
 EXPOSE 3306
 RUN apk update
 RUN apk add openrc
