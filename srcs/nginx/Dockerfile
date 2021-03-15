@@ -1,16 +1,17 @@
 FROM alpine:3.12.1
+EXPOSE 22
 EXPOSE 80
 EXPOSE 443
-EXPOSE 22
 RUN apk update
-COPY default.conf /
 RUN apk add openrc
 RUN rc-status
 RUN touch /run/openrc/softlevel
+RUN wget http://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/telegraf-1.17.0-r0.apk
+RUN apk add telegraf-1.17.0-r0.apk
 RUN apk add nginx
-RUN mv default.conf /etc/nginx/conf.d
-RUN mkdir /nginx
-COPY example.crt /nginx/
-COPY example.key /nginx/
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-CMD service nginx start
+COPY default.conf /etc/nginx/conf.d
+COPY example.crt /
+COPY example.key /
+COPY telegraf.conf /
+COPY run.sh /
+CMD sh /run.sh
