@@ -3,25 +3,28 @@
 #eval $(minikube -p minikube docker-env)
 
 # metallb
-#minikube addons enable metallb
+minikube addons enable metallb
 
 # mysql 
-docker build -t mysql srcs/mysql/
+#docker build -t mysql srcs/mysql/
 
 # phpmyadmin
-docker build -t phpmyadmin srcs/phpmyadmin/
+#docker build -t phpmyadmin srcs/phpmyadmin/
 
 # wordpress
-docker build -t wordpress srcs/wordpress/
+#docker build -t wordpress srcs/wordpress/
 
 #nginx
-docker build -t nginx srcs/nginx/
+#docker build -t nginx srcs/nginx/
 
 #grafan
-docker build -t grafana srcs/grafana/
+#docker build -t grafana srcs/grafana/
 
 #influxdb
-docker build -t influxdb srcs/influxdb/
+#docker build -t influxdb srcs/influxdb/
+
+#ftps
+docker build -t ftps srcs/ftps
 
 # deploy
-kubectl apply -f srcs/yamls/
+#kubectl apply -f srcs/yamls/
