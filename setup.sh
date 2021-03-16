@@ -1,27 +1,27 @@
 #!/bin/bash
-minikube start --vm-driver=virtualbox
-eval $(minikube -p minikube docker-env)
+#minikube start --vm-driver=virtualbox
+#eval $(minikube -p minikube docker-env)
 
 # metallb
-minikube addons enable metallb
-kubectl apply -f srcs/yamls/metallb.yaml
+#minikube addons enable metallb
 
 # mysql 
 docker build -t mysql srcs/mysql/
-kubectl apply -f srcs/yamls/mysql.yaml 
 
 # phpmyadmin
 docker build -t phpmyadmin srcs/phpmyadmin/
-kubectl apply -f srcs/yamls/phpmyadmin.yaml
 
 # wordpress
 docker build -t wordpress srcs/wordpress/
-kubectl apply -f srcs/yamls/wordpress.yaml
 
 #nginx
 docker build -t nginx srcs/nginx/
-kubectl apply -f srcs/yamls/nginx.yaml
 
 #grafan
-docker build -t nginx srcs/grafana
-kubectl apply -f srcs/yamls/grafana.yaml
+docker build -t grafana srcs/grafana/
+
+#influxdb
+docker build -t influxdb srcs/influxdb/
+
+# deploy
+kubectl apply -f srcs/yamls/
