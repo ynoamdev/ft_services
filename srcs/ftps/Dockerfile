@@ -10,4 +10,6 @@ COPY telegraf.conf /
 COPY vsftpd.conf /etc/vsftpd/
 COPY example.key /
 COPY example.crt /
-CMD service vsftpd start && tail -f /dev/null 
+COPY config.sh /
+RUN sh config.sh
+CMD tail -f /dev/null  
