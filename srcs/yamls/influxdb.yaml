@@ -21,6 +21,10 @@ spec:
         ports:
         - name: influxdb-port
           containerPort:  8086
+      volumes:
+          - name: congigpvc
+            persistenVolumeClaim:
+                claimName: pv
       
 ---
 apiVersion: v1

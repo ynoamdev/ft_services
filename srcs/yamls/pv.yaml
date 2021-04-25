@@ -1,0 +1,13 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+    name: pv01
+spec:
+    capacity: 
+        storage: 512m
+    accessModes:
+        - ReadWriteMany
+    hostPath:
+        path: "/data/config"
+    storageClassName: shared
+      

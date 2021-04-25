@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+    name: pv
+spec:
+    accessModes:
+        - ReadWriteMany
+    resources:
+        requests:
+            storage:  256m
+    storageClassName: shared
+     
